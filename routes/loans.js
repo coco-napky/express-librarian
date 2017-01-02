@@ -2,7 +2,7 @@
 
 const routeFactory = require('./routeFactory');
 
-const Model = require('../models/userModel');
+const Model = require('../models/loanModel');
 const Service = require('../services/service');
 const BookshelfRepository = require('../repositories/bookshelfRepository');
 

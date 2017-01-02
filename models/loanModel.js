@@ -3,14 +3,14 @@
 const { TABLES } = require('../config/tables');
 const { Model }  = require('../config/bookshelf.config');
 
-class User extends Model {
+class Loan extends Model {
   get tableName() {
-    return TABLES.USERS
+    return TABLES.BOOKS
   }
 
   get idAttribute() {
-    return 'user_id';
+    return 'loan_id';
   }
 }
 
-module.exports = User;
+module.exports = Loan;

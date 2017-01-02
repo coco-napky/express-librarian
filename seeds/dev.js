@@ -13,7 +13,7 @@ exports.seed = function(knex, Promise) {
         knex('users').insert({username: 'Napky'}),
 
         //books
-        knex('books').insert({name: 'El Alquimista'}),
+        knex('books').insert({name: 'Moby Dick'}),
         knex('books').insert({name: 'Don Quixote '}),
         knex('books').insert({name: '1984'}),
         knex('books').insert({name: 'War And Peace'}),
