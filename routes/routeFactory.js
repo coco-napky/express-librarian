@@ -6,19 +6,15 @@ const routeFactory = service => {
 
   let router = express.Router();
 
-  router.get('/:id?', (req, res, next) => {
-    let { id } = req.params;
-
-    if(!id) return next();
-
-    service.getModelById(id)
-    .then(data => res.json(data))
-    .catch(error => res.send(error));
-
-  }, (req, res, next) => {
+  router.get('/', (req, res, next) => {
     service.getModels()
     .then(data =>  res.json(data))
     .catch(error => res.json(error));
+  }).get('/:id' ,(req, res, next) => {
+    let { id } = req.params;
+    service.getModelById(id)
+    .then(data => res.json(data))
+    .catch(error => res.send(error));
   })
   .post('/', (req, res, next) => {
     let { model } = req.body;

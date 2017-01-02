@@ -1,7 +1,8 @@
 'use strict';
 
 const { TABLES } = require('../config/tables');
-const { Model }  = require('../config/bookshelf.config');
+const Bookshelf  = require('../config/bookshelf.config');
+const { Model } = Bookshelf;
 
 const Book = require('./bookModel');
 const Loan = require('./loanModel');
@@ -16,8 +17,12 @@ class User extends Model {
   }
 
   books() {
-    return this.belongsToMany(Book).through(Loan);
+    return this.belongsToMany('Book').through('Loan', 'user_id', 'book_id');
+  }
+
+  loans() {
+    return this.hasMany('Loan', 'user_id');
   }
 }
 
-module.exports = User;
+module.exports = Bookshelf.model('User', User);

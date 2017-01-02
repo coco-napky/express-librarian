@@ -4,9 +4,9 @@ const routeFactory = require('./routeFactory');
 
 const Model = require('../models/loanModel');
 const Service = require('../services/service');
-const BookshelfRepository = require('../repositories/bookshelfRepository');
+const LoanRepository = require('../repositories/loanRepository');
 
-let service = new Service(new BookshelfRepository(Model));
+let service = new Service(new LoanRepository(Model));
 let router = routeFactory(service);
 
 module.exports = router;
