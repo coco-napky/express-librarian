@@ -3,6 +3,9 @@
 const { TABLES } = require('../config/tables');
 const { Model }  = require('../config/bookshelf.config');
 
+const Book = require('./bookModel');
+const Loan = require('./loanModel');
+
 class User extends Model {
   get tableName() {
     return TABLES.USERS
@@ -10,6 +13,10 @@ class User extends Model {
 
   get idAttribute() {
     return 'user_id';
+  }
+
+  books() {
+    return this.belongsToMany(Book).through(Loan);
   }
 }
 

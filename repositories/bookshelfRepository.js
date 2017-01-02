@@ -20,8 +20,8 @@ class BookshelfRepository extends Repository {
     return this.model.forge(attributes).fetch();
   }
 
-  postModel(name){
-    return this.model.forge({name}).save();
+  postModel(model){
+    return this.model.forge(model).save();
   }
 
   deleteModel(id) {
