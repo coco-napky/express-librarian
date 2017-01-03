@@ -25,4 +25,6 @@ class User extends Model {
   }
 }
 
+User.dependents = ['loans'];
+
 module.exports = Bookshelf.model('User', User);
