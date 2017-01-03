@@ -32,6 +32,8 @@ class Service {
 
   deleteModel(id) {
     return (new Promise((resolve, reject) => {
+      let promise = this.repository.deleteModel(id)
+      .catch(err => console.log(err));
       this.repository.deleteModel(id)
       .then(data => resolve(data))
       .catch(err => reject(err));

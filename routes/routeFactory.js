@@ -25,7 +25,7 @@ const routeFactory = service => {
   })
   .delete('/', (req, res, next) => {
     let { id } = req.body;
-
+    console.log('id is ',id);
     service.deleteModel(id)
     .then(response => res.json(response))
     .catch(error => res.json(error));

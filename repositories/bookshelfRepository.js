@@ -28,7 +28,7 @@ class BookshelfRepository extends Repository {
     let attributes = {};
     let model = new this.model();
     attributes[model.idAttribute] = +id;
-    return this.model.query({where: {attributes}}).destroy();
+    return this.model.query({where: attributes}).destroy();
   }
 }
 
